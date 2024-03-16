@@ -5,7 +5,7 @@ import uuid
 from datetime import datetime, timedelta
 
 sqs_client = boto3.client('sqs')
-QUEUE_URL = 'arn:aws:sqs:us-east-2:992382818239:AirbnbBookingQueue'
+QUEUE_URL = 'https://sqs.us-east-2.amazonaws.com/992382818239/AirbnbBookingQueue'
 
 cities = ["New York", "Los Angeles", "London", "Paris", "Tokyo", "Sydney"]
 countries = ["USA", "UK", "France", "Japan", "Australia", "Canada"]
