@@ -48,7 +48,8 @@ def generate_price():
 
 def lambda_handler(event, context):
     i = 0
-    while i < 200:
+    while i < 5:
+        print("i :", str(i))
         booking_data = {
             "bookingId": generate_uuid(),
             "userId": generate_user_id(),
@@ -64,7 +65,7 @@ def lambda_handler(event, context):
             MessageBody=json.dumps(booking_data)
         )
         i += 1
-
+    print(f"total {i} events have been sent to SQS")
     return {
         'statusCode': 200,
         'body': json.dumps('Sales order data published to SQS!')
